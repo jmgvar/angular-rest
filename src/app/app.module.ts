@@ -8,6 +8,9 @@ import { FirebaseComponent } from './firebase/firebase/firebase.component';
 import { HomeComponent } from './home/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReqresPromiseComponent } from './promesas/reqres/reqres.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { ReqresPromiseComponent } from './promesas/reqres/reqres.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
